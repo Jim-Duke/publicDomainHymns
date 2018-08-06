@@ -1,27 +1,36 @@
 \version "2.19.49"
+#(use-modules (guile-user))
 
-\include "common.ly"
-
-%%
-%% Tweaks
-%%
-
-SlideLyricFontSize = #4
+#(ly:set-option 'relative-includes #t)
+\include "../templates/functions.ly"
+\include "../templates/midi.ly"
+\include "../templates/hymns.ly"
+\include "../hymn_settings.ly"
 
 %%
 %% Hymn Metadata Variables
 %%
 
 Title = "Abide With Me"
+
+%%
+%% Provide defaults for things that would be assigned by external
+%% mechanisms.
+%%
+%% SongNumber       provides the song number assigned within a hymnal to this
+%%                  hymn.
+%%
+%% RightirstPage    specifies if the first page of the hymn occurs on the
+%%                  right (#t - true), or left (#f - false).
+%%
+
 SongNumber = \abide_with_me_number
-build_dir = "../Build"
+RightFirstPage = \abide_with_me_number_rhs
 
 LeaderHints = \markup {
   \fontsize #-4
   \normal-text { "E" \musicglyph #"accidentals.flat" " - 4 - MI" }
 }
-
-FirstPage = #(if abide_with_me_number_rhs 1 2)
 
 Scripture = \markup {
   \override #'(line-width . 60)
@@ -49,8 +58,8 @@ ShowScriptureOnSheetMusic = ##f
   composer = "William H. Monk (1861)"
   poet = "Henry F. Lyte (1847)"
   songNumber = \SongNumber
-  lhs = #(if abide_with_me_number_rhs LeaderHints abide_with_me_number)
-  rhs = #(if abide_with_me_number_rhs abide_with_me_number LeaderHints)
+  lhs = #(if RightFirstPage LeaderHints SongNumber)
+  rhs = #(if RightFirstPage SongNumber LeaderHints)
   copyright = "In the Public Domain"
   license = ##f
   tagline = ##f
@@ -282,4 +291,4 @@ VerseSix = \lyricmode {
   In life, in death, O Lord, a -- bide with me!
 }
 
-\include "bumby-hymnal-style.ly"
+\include "../templates/bumby-hymnal-template.ly"

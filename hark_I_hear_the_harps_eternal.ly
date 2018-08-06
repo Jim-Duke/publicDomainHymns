@@ -1,6 +1,11 @@
 \version "2.19.49"
+#(use-modules (guile-user))
 
-\include "common.ly"
+#(ly:set-option 'relative-includes #t)
+\include "../templates/functions.ly"
+\include "../templates/midi.ly"
+\include "../templates/hymns.ly"
+\include "../hymn_settings.ly"
 
 %%
 %% Tweaks
@@ -358,4 +363,4 @@ ChorusLyrics = \lyricmode {
   Glo -- ry to the great I AM!
 }
 
-\include "bumby-hymnal-style.ly"
+\include "../templates/bumby-hymnal-template.ly"

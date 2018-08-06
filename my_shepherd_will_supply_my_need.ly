@@ -1,6 +1,11 @@
 \version "2.19.49"
+#(use-modules (guile-user))
 
-\include "common.ly"
+#(ly:set-option 'relative-includes #t)
+\include "../templates/functions.ly"
+\include "../templates/midi.ly"
+\include "../templates/hymns.ly"
+\include "../hymn_settings.ly"
 
 %%
 %% Tweaks
@@ -457,4 +462,4 @@ VerseThree = \lyricmode {
   but like a child at home.
 }
 
-\include "bumby-hymnal-style.ly"
+\include "../templates/bumby-hymnal-template.ly"
