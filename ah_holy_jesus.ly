@@ -2,10 +2,10 @@
 #(use-modules (guile-user))
 
 #(ly:set-option 'relative-includes #t)
-\include "../templates/functions.ly"
-\include "../templates/midi.ly"
-\include "../templates/hymns.ly"
-\include "../hymn_settings.ly"
+\include "../LilypondTemplates/functions.ly"
+\include "../LilypondTemplates/midi.ly"
+\include "../LilypondTemplates/hymns.ly"
+\include "../LilypondTemplates/hymn_settings.ly"
 
 %%
 %% Tweaks
@@ -253,4 +253,4 @@ VerseFive = \lyricmode {
   Not my de -- serv -- ing.
 }
 
-\include "../templates/bumby-hymnal-template.ly"
+\include "../LilypondTemplates/bumby-hymnal-template.ly"
