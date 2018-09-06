@@ -5,10 +5,7 @@
 \include "../LilypondTemplates/functions.ly"
 \include "../LilypondTemplates/midi.ly"
 \include "../LilypondTemplates/hymns.ly"
-<<<<<<< HEAD
-\include "hymn_settings.ly"
-=======
->>>>>>> 03d72403bea704df622c09b1ddad28f4a9d05f11
+\include "../LilypondTemplates/hymn_settings.ly"
 
 %%
 %% Hymn Metadata Variables
